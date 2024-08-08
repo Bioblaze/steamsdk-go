@@ -1,0 +1,3 @@
+[submodule "steamworks_sdk"]
+	path = steamworks_sdk
+	url = https://github.com/Bioblaze/steamworks_sdk.git
