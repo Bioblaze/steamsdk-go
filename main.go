@@ -3,23 +3,13 @@ package main
 // steamworks.go
 
 /*
-#cgo LDFLAGS: -Lbuild/windows -lsteamworks_wrapper
-#cgo CFLAGS: -I./steamworks_sdk/public/steam -I./cpp
+#cgo LDFLAGS: -Lbuild/windows -lsteam_api -lsteamworks_wrapper
+#cgo CFLAGS: -I./steamworks_sdk/public -I./cpp -fno-exceptions
+#cgo CXXFLAGS: -std=c++11
 #include <stdbool.h>
 #include <stdint.h>
 #include <stdlib.h> // Add this to include standard library for free
-#include "steamworks_wrapper.h"
-
-
-#define k_cchMaxSteamErrMsg 1024
-typedef char SteamErrMsg[k_cchMaxSteamErrMsg];
-
-typedef enum {
-	k_ESteamAPIInitResult_OK = 0,
-	k_ESteamAPIInitResult_FailedGeneric = 1, // Some other failure
-	k_ESteamAPIInitResult_NoSteamClient = 2, // We cannot connect to Steam, steam probably isn't running
-	k_ESteamAPIInitResult_VersionMismatch = 3, // Steam client appears to be out of date
-} ESteamAPIInitResult;
+#include "bindings.cpp"
 
 */
 import "C"
